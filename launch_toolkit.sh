@@ -1,46 +1,49 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# TB-CyberArsenal: Enterprise Offensive Security & Pentest Framework
-# Architected & Curated by: Thanh Bình (ThanhBinhITDev)
-# Tactical AI Copilot: Mac 🦞
+# BỘ ĐỒ NGHỀ HÀNH PHÁP - THANH BÌNH
+# Tác giả & Quản lý: THANH BÌNH (ThanhBinhITDev)
+# Trợ lý AI: Mac 🦞
 # ==============================================================================
 
 TOOLKIT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export TOOLKIT_DIR
 
-# Prioritize toolkit binaries over standard paths
-export PATH="$TOOLKIT_DIR/01_Recon_Information_Gathering/nmap/bin:$TOOLKIT_DIR/01_Recon_Information_Gathering/bin:$TOOLKIT_DIR/02_Web_Application_Testing/bin:$TOOLKIT_DIR/02_Web_Application_Testing/nikto/bin:$TOOLKIT_DIR/04_Password_Cracking_Wordlists/bin:$TOOLKIT_DIR/04_Password_Cracking_Wordlists/hydra/bin:$TOOLKIT_DIR/05_Network_Sniffing_Spoofing/bin:$TOOLKIT_DIR/05_Network_Sniffing_Spoofing/bettercap/bin:$TOOLKIT_DIR/07_Wireless_Testing/aircrack-ng/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
+# Nạp các công cụ chạy trực tiếp từ ổ cứng vào PATH ưu tiên
+export PATH="$TOOLKIT_DIR/01_Thu_Thap_Thong_Tin/nmap/bin:$TOOLKIT_DIR/01_Thu_Thap_Thong_Tin/bin:$TOOLKIT_DIR/02_Kiem_Thu_Web/bin:$TOOLKIT_DIR/02_Kiem_Thu_Web/nikto/bin:$TOOLKIT_DIR/04_Tu_Dien_Va_Mat_Khau/bin:$TOOLKIT_DIR/04_Tu_Dien_Va_Mat_Khau/hydra/bin:$TOOLKIT_DIR/05_Danh_Chan_Mang/bin:$TOOLKIT_DIR/05_Danh_Chan_Mang/bettercap/bin:$TOOLKIT_DIR/07_Kiem_Thu_Wifi/aircrack-ng/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
 
 echo "================================================================================"
-echo "   🛡️ TB-CYBERARSENAL | OFFENSIVE SECURITY & PENETRATION TESTING FRAMEWORK    "
-echo "   Architected & Curated by : Thanh Bình (ThanhBinhITDev)                      "
-echo "   Tactical AI Copilot      : Mac 🦞                                           "
+echo "          ⚡ BỘ ĐỒ NGHỀ HÀNH PHÁP - KHO CÔNG CỤ CỦA SẾP THANH BÌNH ⚡            "
+echo "  Quản lý & Tuyển chọn : THANH BÌNH (ThanhBinhITDev)                             "
+echo "  Trợ lý tác chiến     : Mac 🦞                                                  "
 echo "================================================================================"
-echo "📁 Base Directory: $TOOLKIT_DIR"
+echo "📁 Thư mục gốc ổ cứng: $TOOLKIT_DIR"
 echo ""
-echo "Active Modules:"
-echo " [01] Reconnaissance & OSINT         -> nmap, subfinder, httpx, katana, theHarvester"
-echo " [02] Web Application Assessment     -> sqlmap, nuclei, ffuf, gobuster, nikto, XSStrike, Arjun, commix"
-echo " [03] Exploitation Frameworks        -> msfconsole, routersploit"
-echo " [04] Credential Access & Cracking   -> SecLists, hydra, john, hashcat"
-echo " [05] Traffic Interception & MITM    -> bettercap, mitmproxy, socat, proxychains4"
-echo " [06] Post-Exploitation & PrivEsc    -> PayloadsAllTheThings, PEASS-ng, impacket"
-echo " [07] Wireless Security Audit        -> aircrack-ng suite"
+echo "Các nhóm công cụ sẵn sàng phục vụ sếp:"
+echo " [01] 01_Thu_Thap_Thong_Tin   -> nmap, subfinder, httpx, katana, theHarvester"
+echo " [02] 02_Kiem_Thu_Web         -> sqlmap, nuclei, ffuf, gobuster, nikto, XSStrike, Arjun, commix"
+echo " [03] 03_Khai_Thac_Loi_Hong   -> routersploit, msfconsole"
+echo " [04] 04_Tu_Dien_Va_Mat_Khau  -> SecLists (full), hydra, hashcat, john"
+echo " [05] 05_Danh_Chan_Mang       -> bettercap, mitmproxy, socat, proxychains4"
+echo " [06] 06_Leo_Quyen_Va_Chi_Huy -> PayloadsAllTheThings, PEASS-ng (linpeas/winpeas), impacket"
+echo " [07] 07_Kiem_Thu_Wifi        -> aircrack-ng suite"
 echo "================================================================================"
 
-# Aliases mapped directly to portable binaries and standalone scripts
-alias nmap="$TOOLKIT_DIR/01_Recon_Information_Gathering/nmap/bin/nmap"
-alias sqlmap="python3 '$TOOLKIT_DIR/02_Web_Application_Testing/sqlmap/sqlmap.py'"
-alias commix="python3 '$TOOLKIT_DIR/02_Web_Application_Testing/commix/commix.py'"
-alias xsstrike="python3 '$TOOLKIT_DIR/02_Web_Application_Testing/XSStrike/xsstrike.py'"
-alias arjun="python3 '$TOOLKIT_DIR/02_Web_Application_Testing/Arjun/arjun.py'"
-alias nikto="$TOOLKIT_DIR/02_Web_Application_Testing/nikto/bin/nikto"
-alias theharvester="python3 '$TOOLKIT_DIR/01_Recon_Information_Gathering/theHarvester/theHarvester.py'"
-alias routersploit="python3 '$TOOLKIT_DIR/03_Exploitation_Frameworks/routersploit/rsf.py'"
-alias hydra="$TOOLKIT_DIR/04_Password_Cracking_Wordlists/hydra/bin/hydra"
-alias bettercap="$TOOLKIT_DIR/05_Network_Sniffing_Spoofing/bettercap/bin/bettercap"
-alias seclists="echo '$TOOLKIT_DIR/04_Password_Cracking_Wordlists'"
-alias payloads="echo '$TOOLKIT_DIR/06_Post_Exploitation_PrivEsc/PayloadsAllTheThings'"
-alias peass="echo '$TOOLKIT_DIR/06_Post_Exploitation_PrivEsc/PEASS-ng'"
+# Lệnh tắt (Aliases) để sếp gọi ngay không cần nhớ đường dẫn phức tạp
+alias nmap="$TOOLKIT_DIR/01_Thu_Thap_Thong_Tin/nmap/bin/nmap"
+alias sqlmap="python3 '$TOOLKIT_DIR/02_Kiem_Thu_Web/sqlmap/sqlmap.py'"
+alias commix="python3 '$TOOLKIT_DIR/02_Kiem_Thu_Web/commix/commix.py'"
+alias xsstrike="python3 '$TOOLKIT_DIR/02_Kiem_Thu_Web/XSStrike/xsstrike.py'"
+alias arjun="python3 '$TOOLKIT_DIR/02_Kiem_Thu_Web/Arjun/arjun.py'"
+alias nikto="$TOOLKIT_DIR/02_Kiem_Thu_Web/nikto/bin/nikto"
+alias theharvester="python3 '$TOOLKIT_DIR/01_Thu_Thap_Thong_Tin/theHarvester/theHarvester.py'"
+alias routersploit="python3 '$TOOLKIT_DIR/03_Khai_Thac_Loi_Hong/routersploit/rsf.py'"
+alias hydra="$TOOLKIT_DIR/04_Tu_Dien_Va_Mat_Khau/hydra/bin/hydra"
+alias bettercap="$TOOLKIT_DIR/05_Danh_Chan_Mang/bettercap/bin/bettercap"
 
-echo "✨ Tactical environment initialized successfully. Ready for deployment."
+# Đường dẫn nhanh đến các kho tài liệu & từ điển
+alias tudien="echo '$TOOLKIT_DIR/04_Tu_Dien_Va_Mat_Khau/SecLists'"
+alias seclists="echo '$TOOLKIT_DIR/04_Tu_Dien_Va_Mat_Khau/SecLists'"
+alias payload="echo '$TOOLKIT_DIR/06_Leo_Quyen_Va_Chi_Huy/PayloadsAllTheThings'"
+alias peass="echo '$TOOLKIT_DIR/06_Leo_Quyen_Va_Chi_Huy/PEASS-ng'"
+
+echo "✨ Đã nạp xong bộ công cụ! Sếp chỉ cần gõ tên tool là chạy được ngay."
